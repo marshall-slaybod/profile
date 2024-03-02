@@ -1,1 +1,457 @@
+﻿body {
+    font-family: "Poppins", Helvetica, "Droid Sans", sans-serif;
+	color: #abb8c3;
+	margin: 0;
+	height: 100%;
+}
+/* ------ COLOR SCHEME (needs updating) ------
+Purples
+	#6c5cd6
+	rgb(108, 92, 214)
 
+	#24248f
+	rgb(36, 36, 143)
+
+Greens
+	#00b300
+	rgb(0, 179, 0)
+	
+	#32612d
+	rgb(50, 97, 45)
+ --------------------------- */
+html {
+	height: 100%;
+	background-color: black;
+}
+/* Header */
+.header {
+    padding: 30px;
+    text-align: center;
+    background: white;
+}
+    .header h1 {
+        font-size: 50px;
+    }
+/* *** -------- *** TOP NAV *** -------- *** */
+.topnav {
+    /* overflow: hidden; */
+	z-index: 1;
+	opacity: .7;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+    background-color: #24248f;
+}
+	/* -------- TOP NAV LINKS -------- */
+    .topnav a {
+        float: left;
+        display: block;
+        color: rgb(185, 223, 185);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+        /* Change color on hover */
+        .topnav a:hover {
+            background-color: rgba(108, 92, 214, .8);
+            font-weight: bold;
+			text-decoration: underline;
+			text-decoration-color: #24248f;
+        }
+		/* Hide until media query: Width <= 400px */
+		.topnav #hamburger {
+			display: none;
+		}
+	/* Hide until media query: Width <= 400px */
+	#nav-hamburger {
+		display: none;
+	}
+	/* Style for social media links in nav bar */
+	.social {
+		font-size: 20px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+}
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: rgb(98, 92, 234);
+  position: fixed;
+  z-index: 1;
+  display: block;
+  margin-top: 58px;
+}
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: rgb(36, 36, 143);
+  width: 0%;
+  position: fixed;
+  z-index: 1;
+}
+/* *** -------- *** HERO SECTION *** -------- *** */
+.hero-image {
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url("../image/hero_splash.png"), 
+			linear-gradient(45deg, rgba(102, 0, 255, .9), rgba(50, 97, 45, .9));
+	@supports (background-image: url("../image/hero_splash.webp")) {
+		background-image: url("../image/hero_splash.webp"), 
+			linear-gradient(45deg, rgba(102, 0, 255, .9), rgba(50, 97, 45, .9));
+	}
+	z-index: -1;
+}
+.hero-content {
+	position: absolute;
+	width: 100vw;
+	max-height: 100vw;
+	margin: 0;
+}
+	.logo {
+		padding-top: 15vmax;
+		padding-left: 2%;
+		display: block;
+		width: 35vw;
+	}
+	.logo-text {
+		padding-left: 2%;
+		padding-bottom: 24px;
+		max-width: 35vw;
+		color: white;
+	}
+	
+		.logo-text-bg {
+			background-color: rgba(108, 92, 214, .3);
+		}
+/* *** -------- *** BODY *** -------- *** */
+.anchor{
+	visibility: hidden;
+	display:block;
+	position:relative;
+	top:-66px;
+}
+h1, h2, h3 {
+}
+/* Create two unequal columns that float next to each other */
+.column-33 {
+    float: left;
+    width: 33.33%;
+	padding-left: 2%;
+	padding-top: 20px;
+}
+.column-66 {
+    float: left;
+    width: 60.67%;
+    padding-left: 2%;
+	background-color: black;
+	height: 100%;
+}
+/* Style image captions */
+.caption {
+    text-align: center;
+	font-size: small;
+}
+/* Style the button/bar that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #6c5cd6;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 32px;
+  font-weight: bold;
+  border-bottom-style: solid;
+  border-bottom-color: white;
+  border-bottom-width: 1px;
+}
+	/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+	.collapsible:hover {
+	  background-color: #24248f;
+	}
+	.collapsible:before {
+		content: '\025B6';
+	}
+.not-collapsible {
+  background-color: #6c5cd6;
+  color: white;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 32px;
+  font-weight: bold;
+  border-bottom-style: solid;
+  border-bottom-color: white;
+  border-bottom-width: 1px;
+  cursor: default;
+}
+.active:before {
+	content: '\025BC'
+}
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  display: none;
+}
+	#product-content {
+		background-color: black;
+		overflow: hidden;
+	}	
+	#music-content {
+		display: none;
+		background-color: black;
+		overflow: hidden;
+	}
+	#bakery-content {
+		display: none;
+		background-color: black;
+		overflow: hidden;
+	}
+	#photography-content {
+		display: none;
+		background-color: black;
+		overflow: hidden;
+	}
+/* Style the buttons used in the body */
+.button-link {
+	  border: none; /* Remove borders */
+	  outline: none; /* Remove outline */
+	  background-color: rgba(108, 92, 214, .6); /* Set a background color */
+	  color: #fff; /* Text color */
+	  cursor: pointer; /* Add a mouse pointer on hover */
+	  padding: 8px; /* Some padding */
+	  border-radius: 10px; /* Rounded corners */
+	  font-size: 18px; /* Increase font size */	
+	  text-decoration: none;
+	  transition: all 0.5s;
+}	  
+	.button-link:hover {
+		background-color: #24248f; 
+	}
+	.button-link span {
+	  cursor: pointer;
+	  display: inline-block;
+	  position: relative;
+	  transition: 0.5s;
+	}
+	.button-link span:after {
+	  content: '\00bb';
+	  position: absolute;
+	  opacity: 0;
+	  top: 0;
+	  right: -20px;
+	  transition: 0.5s;
+	}
+	.button-link:hover span {
+	  padding-right: 25px;
+	}
+	.button-link:hover span:after {
+	  opacity: 1;
+	  right: 0;
+	}
+/* Assign as necessary to assist with debugging */
+.debug {
+	border-width: thin;
+	border-color: red;
+	border-style: solid;
+}
+/* Add a card effect for articles */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+/* Clear floats after the columns */
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* *** --------- *** FOOTER *** ---------- *** */
+.footer {
+    padding: 5px;
+    text-align: center;
+	/* background-image: linear-gradient(45deg, rgba(90, 0, 255, .7), rgba(50, 97, 45, .7)); */
+	background-color: rgba(108, 92, 214, .8);
+	color: white;
+}
+.to-top {
+  /* display: none; Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 3vw; /* Place the button at the bottom of the page */
+  right: 3vw; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: rgb(108, 92, 214); /* Set a background color */
+  color: #fff; /* Text color */
+  opacity: .6;
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 8px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */	
+}
+	.to-top:hover {
+		background-color: #24248f; /* Add a dark-grey background on hover */
+	}
+/* Style the button used in the footer */
+.footer-link {
+	  border: none; /* Remove borders */
+	  outline: none; /* Remove outline */
+	  background-color: rgba(36, 36, 143, .9); /* Set a background color */
+	  color: #fff; /* Text color */
+	  cursor: pointer; /* Add a mouse pointer on hover */
+	  padding: 3px; /* Some padding */
+	  border-radius: 10px; /* Rounded corners */
+	  font-size: 12px; /* Increase font size */	
+	  text-decoration: none;
+	  transition: all 0.5s;
+}	  
+	.footer-link:hover {
+		background-color: rgba(108, 92, 214, .6); 
+	}
+	.footer-link span {
+	  cursor: pointer;
+	  display: inline-block;
+	  position: relative;
+	  transition: 0.5s;
+	}
+	.footer-link span:after {
+	  content: '\00bb';
+	  position: absolute;
+	  opacity: 0;
+	  top: 0;
+	  right: -20px;
+	  transition: 0.5s;
+	}
+	.footer-link:hover span {
+	  padding-right: 10px;
+	}
+	.footer-link:hover span:after {
+	  opacity: 1;
+	  right: 0;
+	}
+/* *** --------- *** MEDIA QUERIES *** ---------- *** */
+/* <= 800px wide Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+	.hero-image {
+		background-image: url("../image/hero_splash_800.png"), 
+				linear-gradient(45deg, rgba(102, 0, 255, .9), rgba(50, 97, 45, .9));
+		@supports (background-image: url("../image/hero_splash_800.webp")) {
+			background-image: url("../image/hero_splash_800.webp"), 
+				linear-gradient(45deg, rgba(102, 0, 255, .9), rgba(50, 97, 45, .9));
+		}
+	}
+	.logo {
+		margin: 0;
+	}
+	.logo-text {
+		padding-bottom: 5%;
+		padding-top: 5vw;
+		padding-left: 0;
+		margin: auto;
+		display: block;
+		width: 95vw;
+		max-width: 100%;
+	}
+		.logo-text-bg {
+			background-color: rgba(108, 92, 214, .4);
+		}
+	#nav-hamburger {
+		display: block;
+	}
+	#nav-photography {
+		display: none;
+	}
+	#nav-bakery {
+		display: none;
+	}	
+	#nav-music {
+		display: none;
+	}
+	#nav-prod {
+		display: none;
+	}
+	.topnav #hamburger {
+		width: 100%;
+		transition: max-height 0.2s ease-out;
+	}
+	.column-33, .column-66 {
+        width: 100%;
+        padding: 0;
+    }
+    iframe {
+        max-width: 100% !important;
+        width: auto 
+        height: auto 
+    }
+	.collapsible {
+		font-size: 24px;
+	}
+	.not-collapsible {
+		font-size: 24px;
+	}
+}
+/* <= 450px high Responsive layout - When screen is squashed short, make logo-text 95vw width and reduce padding*/
+@media screen and (max-height: 450px) {
+	.logo {
+		padding-top: 10vw;
+	}
+	.logo-text {
+		padding-bottom: 5%;
+		padding-top: 0;
+		padding-left: 0;
+		margin: auto;
+		display: block;
+		width: 95vw;
+		max-width: 100%;
+	}
+}
+/* <= 400px wide Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 415px) {
+	.hero-image {
+		background-image: url("../image/hero_splash_crop.png"), 
+				linear-gradient(45deg, rgba(102, 0, 255, .9), rgba(50, 97, 45, .9));
+		@supports (background-image: url("../image/hero_splash_crop.webp")) {
+			background-image: url("../image/hero_splash_crop.webp"), 
+				linear-gradient(45deg, rgba(102, 0, 255, .9), rgba(50, 97, 45, .9));
+		}
+		background-position: center top;
+		background-repeat: no-repeat;
+		min-height: 100%;
+		max-height: 100%;
+		padding-top: 10%;
+	}
+	.logo {
+		padding-top: 20vw;
+		padding-left: 2vw;
+		display: block;
+		width: 75vw;
+		max-width: 100%;
+	}
+	.logo-text {
+		padding-bottom: 5vw;
+		padding-top: 70vw;
+		padding-left: 0;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.collapsible {
+		font-size: 18px;
+	}
+	.not-collapsible {
+		font-size: 18px;
+	}
+}
