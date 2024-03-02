@@ -1,0 +1,11 @@
+# robots.txt file for Slaybod.com
+
+User-agent: *
+Disallow: /cgi-bin/
+Disallow: /old-slaybod.com/
+Disallow: /profile/
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+
+Sitemap: https://www.slaybod.com/sitemap.xml

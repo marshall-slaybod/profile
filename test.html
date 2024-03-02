@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Product Manager and Multi-Disciplined Artist in the Lowcountry">
+	<meta name="keywords" content="product management, responsible ai, explainable ai, music, singer, songwriter, sourdough, baker, photography">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Marshall Slaybod</title>
+    <link rel="stylesheet" href="./css/theme.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+	<link rel="shortcut icon" type="image/x-icon" href="./image/favicon.ico">
+</head>
+<style type="text/css">
+	.hero-image {
+	background-image: 
+		url("./image/hero_splash.png"), 
+		linear-gradient(45deg, rgba(102, 0, 255, .9), rgba(50, 97, 45, .9));
+	min-height: 100%;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	}
+</style>
+<script>
+function toggleNav(element) {
+  var x = document.getElementById(element);
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+function toggleContent(element, control) {
+  var x = document.getElementById(element);
+  var y = document.getElementById(control);
+  y.classList.toggle("active");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+window.onscroll = function() {
+	document.getElementById("hamburger").style.display = "none";
+};
+
+/*var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+*/
+
+</script>
+<body>
+
+    <div class="topnav">
+		<div class="social">
+			<a href="https://www.linkedin.com/in/mslaybod/" target="_blank" rel="noopener noreferrer" class="nav-item"><i class="fa fa-linkedin-square"></i></a>
+			<a href="https://github.com/marshall-slaybod" target="_blank" rel="noopener noreferrer" class="nav-item"><i class="fa fa-git-square"></i></a>
+			<a href="https://www.instagram.com/ms1ay/" target="_blank" rel="noopener noreferrer" class="nav-item"><i class="fa fa-instagram"></i></a>
+			<a href="https://m.facebook.com/p/Marshall-Slaybod-Music-100063916758117/" target="_blank" rel="noopener noreferrer" class="nav-item"><i class="fa fa-facebook-square"></i></a>
+		</div>
+        <div id="logo">
+			<a id="nav-hamburger" href="javascript:void(0);" class="icon" onclick="toggleNav('hamburger')" style="float:right">
+				<i class="fa fa-bars"></i></a>
+			<a id="nav-photography" href="#photography" style="float:right" onclick="toggleContent('photography-content', 'photography-button')">Photography</a>
+			<a id="nav-bakery" href="#bakery" style="float:right" onclick="toggleContent('bakery-content', 'bakery-button')">Bakery</a>
+			<a id="nav-music" href="#music" style="float:right" onclick="toggleContent('music-content', 'music-button')">Music</a>
+			<a id="nav-prod" href="#product-management" style="float:right">Product Management</a>
+		</div>
+		<div id="hamburger">
+			<a style="width: 100%" href="#product-management">Product Management</a>
+			<a style="width: 100%" href="#music" onclick="toggleContent('music-content', 'music-button')">Music</a>
+			<a style="width: 100%" href="#bakery" onclick="toggleContent('bakery-content', 'bakery-button')">Bakery</a>
+			<a style="width: 100%" href="#photography" onclick="toggleContent('photography-content', 'photography-button')">Photography</a>
+		</div>
+    </div>
+
+    <div class="hero-image">
+		<!-- div for text with fixed absolute position -->
+		<img src="./image/slaybod_text_white.png" class="logo">
+		<div class="logo-text">
+			<div class="logo-text-bg">
+			<strong><span style="color: #fff">Professional:</span></strong>
+			Product Manager,
+			Compliance Manager,
+			Attorney,
+			Resonpsible AI and Explainable AI enthusiast
+			<br>
+			<strong><span style="color: #fff">Artist:</span></strong>
+			Musician,
+			Baker,
+			Photographer
+			</div>
+		</div>
+	</div>
+    
+	
+	<div class="row" id="product-management" style="border-color: white; border-width: thin">
+		<div class="not-collapsible">
+		Product Management and Compliance
+		</div>
+		<div class="column-33">
+			<img src="./image/prod_splash.jpg" style="max-width: 100%">
+		</div>
+		<div class="column-66" style="margin:auto; padding-bottom:24px">
+			<h3>AI-Enthusiastic Product Manager and Licensed Attorney in Charleston, SC</h3>
+			Self-motivated and results-oriented professional with 6+ years of experience as a product manager, compliance manager, and project manager. Licensed attorney and technical mind passionate about applying legal skills as well as Responsible AI and Explainable AI principles to develop innovative solutions that drive compliance, growth, and efficiency. Proven ability to lead cross-functional teams, launch new offerings, and ensure compliance across complex projects. Accomplished writer, editor, and analyst with a gift for effectively communicating complex technical concepts to educate and persuade diverse audiences.
+		</div>
+    </div>
+
+	<div class="row" id="music">
+		<button id="music-button" class="collapsible" onclick="toggleContent('music-content', 'music-button')">
+			Music
+		</button>
+		<div id="music-content">
+			<div class="column-33">
+			<img src="./image/music_splash.png" style="max-width: 100%">
+			</div>
+			<div class="column-66" style="margin:auto; padding-bottom:24px">
+				<h3>Indie Rock with a Lowcountry flare.</h3>
+				Known for his sweet timbre and wide vocal range, Marshall is a singer, songwriter, and guitarist in the Lowcountry.
+				<div style="text-align: center; display: block; margin: auto">
+					<h4>Live Studio Take - Flies to Honey | Out of Control</h4>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/GTV0eAOIP8A?si=U9vitvVzqMjVWeZg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+		
+			
+			
+    </div>
+	
+	<div class="row" id="bakery">
+		<button id="bakery-button" class="collapsible" onclick="toggleContent('bakery-content', 'bakery-button')">
+		Slay Bread Bakery
+		</button>
+		<div id="bakery-content">
+			<div class="column-33">
+				<img src="./image/bakery_splash.jpg" style="max-width: 100%">
+			</div>
+			<div class="column-66" style="padding-bottom:24px">
+				<h3>About the Baker</h3>
+				Baking is in Marshall’s blood. Between the generations of Jewish bakers in eastern Europe and New York on his father’s side and his mother’s reputation for casually serving up 50 quiches at a house party, each side taught Marshall the magic of how baking can bring people to both delight and unite.
+				<br><br>
+				<a class="button-link" target="_blank" rel="noopener noreferrer" href="https://vev.co/slay-bread-charleston"><span>VIEW MENU AND PRE-ORDER </span></a>
+			</div>
+		</div>
+    </div>
+	
+	<div class="row" id="photography">
+		<button id="photography-button" class="collapsible" onclick="toggleContent('photography-content', 'photography-button')">
+		Photography
+		</button>
+		<div id="photography-content">
+			<div class="column-33">
+				<img src="./image/photo_splash.png" style="max-width: 100%">
+			</div>
+			<div class="column-66" style="padding-bottom:24px">
+				<h3>Chaser of excellent light</h3>
+				Marshall was originally drawn to photography by how it could enhance his other passions rather than distract him from them. As time has elapsed, photography has developed into its own passion. Marshall appreciates how the study of light provides him a creative outlet and how it allows him to capture precious moments.
+			</div>
+		</div>
+    </div>
+
+	<!-- Nav to top -->
+	<a href="#top" class="top"><i class="fa fa-chevron-up"></i></a>
+
+    <div class="footer">
+        <div>
+		<h3>About</h3>
+		Marshall Slaybod is a software-industry professional, attorney, musician, baker, and photographer living in Charleston, South Carolina.
+		</div>
+		<br>
+		<div style="text-align:left; font-size:small">
+		Copyright © 2024
+		</div>
+    </div>
+
+
+
+</body>
+</html>
