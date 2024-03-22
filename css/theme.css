@@ -3,6 +3,7 @@
 	color: #abb8c3;
 	margin: 0;
 	height: 100%;
+	overflow-x: hidden;
 }
 /* ------ COLOR SCHEME (needs updating) ------
 Gray
@@ -95,7 +96,7 @@ html {
 }
 /* *** -------- *** HERO SECTION *** -------- *** */
 .hero-image {
-	height: 100vh;
+	height: 100lvh;
 	width: 100vw;
 	position: fixed;
 	background-position: center;
@@ -138,7 +139,26 @@ html {
 	position:relative;
 	top:-66px;
 }
-h1, h2, h3 {
+.collapsible, .not-collapsible {
+	h1, h2, h3 {
+	/* background: linear-gradient(45deg, rgba(102, 0, 255, .9), rgba(50, 97, 45, .9));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent; */
+	text-align: justify;
+	padding: .25rem .5rem .25rem .5rem;
+	}
+}
+.header-bg{
+	background: linear-gradient(45deg, rgba(102, 0, 255, .9), rgba(50, 97, 45, .9));
+}
+.glass {
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 8px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	padding: 0px .5rem 0px .5rem;
 }
 /* Create two unequal columns that float next to each other */
 .column-33 {
@@ -252,19 +272,95 @@ iframe {
 	color: #24248f;
 	cursor: pointer;
 }
+#moonbender > ul > li::marker {
+	content: ' 🌙 ';
+	}
 .band-member {
 	color: rgb(108, 92, 214);
 	font-weight: bold;
 }
+/* *** GRID STUFF *** */
+.tech-grid {
+	display: grid;
+	gap: 1.5rem;
+	grid-auto-columns: 1fr;
+	grid-template-areas:
+		'photo summary summary'
+		'photo summary summary'
+		'highlights highlights highlights'
+		'skills skills skills';
+	padding-bottom: 5rem;
+	padding-top: 2rem;
+	margin-inline: 2rem;	
+}
+.tech-photo {
+	grid-area: photo;
+}
+.tech-summary {
+	grid-area: summary;
+}
+.tech-highlights {
+	grid-area: highlights;
+}
+.tech-skills {
+	grid-area: skills;
+}
+.music-grid {
+	display: grid;
+	gap: 1.5rem;
+	grid-auto-columns: 1fr;
+	grid-template-areas:
+		'photo summary summary'
+		'photo summary summary'
+		'read-more read-more read-more';
+	padding-bottom: 5rem;
+	padding-top: 2rem;
+	margin-inline: 2rem;	
+}
+.music-photo {
+	grid-area: photo;
+}
+.music-summary {
+	grid-area: summary;
+}
+.music-read-more {
+	grid-area: read-more;
+}
+.music-read-more-grid {
+	grid-template-areas:
+	'singer moonbender services';
+	display: grid;
+	gap: 1rem;
+	grid-auto-columns: 1fr;
+}
+#read-more-singer {
+	grid-area: singer;
+	display: grid;
+	grid-template-columns: subgrid;
+	grid-template-rows: subgrid;
+}
+#read-more-moonbender {
+	grid-area: moonbender;
+	display: grid;
+	grid-template-columns: subgrid;
+	grid-template-rows: subgrid;
+}
+#read-more-services {
+	grid-area: services;
+	display: grid;
+	grid-template-columns: subgrid;
+	grid-template-rows: subgrid;
+}
+
 /* *** FLEXING *** */
 .flex-container {
   width: auto;
-  height: 50%;
+  /* height: 50%; */
   display: flex;
   flex-wrap: wrap;
   /* Default: flex-direction: row;*/
   justify-content: space-evenly;
-  padding-bottom: 20px;
+  padding-bottom: 3rem;
   gap: 10px;
 }
 	div.flex-container {
@@ -276,7 +372,7 @@ iframe {
 	  flex-wrap: wrap;
 	}
 	div.flex-container i {
-	  font-size: 9vw;
+	  font-size: 3.5rem;
 	  display: flex;
 	  width: 100%;
 	  height: auto;
@@ -499,16 +595,34 @@ transform: scale(.9);
         width: 100%;
         padding: 0;
     }
-    /* iframe {
-        max-width: 100% !important;
-        width: auto 
-        height: auto 
-    } */
 	.collapsible {
 		font-size: 24px;
 	}
 	.not-collapsible {
 		font-size: 24px;
+	}
+	.tech-grid {
+		grid-template-areas:
+			'photo summary'
+			'photo summary'
+			'highlights highlights'
+			'skills skills';
+		gap: 1rem;
+		padding-bottom: 5rem;
+		padding-top: 2rem;
+		margin-inline: 1rem;	
+	}
+	.music-grid {
+		gap: 1rem;
+		grid-template-areas:
+			'photo summary'
+			'photo summary'
+			'read-more read-more';
+	}
+	.music-read-more-grid {
+		grid-template-areas:
+		'singer moonbender'
+		'services services';
 	}
 }
 /* <= 700px wide responsive flexbox/gallery */
@@ -530,6 +644,22 @@ transform: scale(.9);
 	}
 	.read-more-content {
 		flex: 0 1 100%;
+	}
+	.tech-grid {
+		grid-template-areas:
+			'photo'
+			'summary'
+			'highlights'
+			'skills';
+		gap: 1rem;
+		margin-inline: 1rem;	
+	}
+	.music-grid {
+		gap: .75rem;
+		grid-template-areas:
+			'photo'
+			'summary'
+			'read-more';
 	}
 }
 /* <= 450px high Responsive layout - When screen is squashed short, make logo-text 95vw width and reduce padding*/
