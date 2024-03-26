@@ -146,9 +146,11 @@ html {
 	-webkit-text-fill-color: transparent; */
 	text-align: justify;
 	padding: .25rem 1rem;
+	margin: 0px;
 }
 .header-bg{
 	background: linear-gradient(45deg, rgba(102, 0, 255, .9), rgba(50, 97, 45, .9));
+	color: whitesmoke;
 }
 .glass {
 	background: rgba(255, 255, 255, 0.2);
@@ -279,6 +281,7 @@ iframe {
 	font-weight: bold;
 }
 /* *** GRID STUFF *** */
+	/* TECH */
 .tech-grid {
 	display: grid;
 	gap: 1.5rem;
@@ -303,6 +306,7 @@ iframe {
 .tech-skills {
 	grid-area: skills;
 }
+	/* MUSIC */
 .music-grid {
 	display: grid;
 	gap: 1.5rem;
@@ -349,7 +353,82 @@ iframe {
 	grid-template-columns: subgrid;
 	grid-template-rows: subgrid;
 }
+	/* BAKING */
 
+	/* PHOTOGRAPHY */
+.photography-grid {
+	display: grid;
+	gap: 1.5rem;
+	grid-auto-columns: 1fr;
+	grid-template-areas:
+		'photo summary summary'
+		'gallery gallery gallery';
+	padding-bottom: 5rem;
+	padding-top: 2rem;
+	margin-inline: 2rem;	
+}
+.photography-photo {
+	grid-area: photo;
+}
+.photography-summary {
+	grid-area: summary;
+}
+.photo-gallery-grid {
+	display: grid;
+	grid-area: gallery;
+	gap: .75rem;
+	grid-auto-columns: 1fr;
+	grid-template-areas:
+		'portraits real-estate real-estate products'
+		'landscapes landscapes astro cityscapes'
+		'landscapes landscapes pets cityscapes'
+		'. food food .';
+	padding-bottom: 5rem;
+	padding-top: 2rem;
+}
+	.photo-gallery-food {
+		grid-area: food;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+	.photo-gallery-real-estate {
+		grid-area: real-estate;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+	.photo-gallery-portraits {
+		grid-area: portraits;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+	.photo-gallery-products {
+		grid-area: products;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+	.photo-gallery-landscapes {
+		grid-area: landscapes;
+		object-fit: cover;
+	}
+	.photo-gallery-cityscapes {
+		grid-area: cityscapes;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+	.photo-gallery-pets {
+		grid-area: pets;
+		object-fit: cover;
+	}
+	.photo-gallery-astro {
+		grid-area: astro;
+		object-fit: cover;
+	}
+ /* ^^^ GRID STUFF ^^^  */
 /* *** FLEXING *** */
 .flex-container {
   width: auto;
@@ -482,12 +561,16 @@ transform: scale(.9);
 }
 /* *** --------- *** FOOTER *** ---------- *** */
 .footer {
-    padding: 5px;
+    padding: 1.5rem 2rem; /* top right (bottom) (left) */
     text-align: center;
 	background-image: linear-gradient(45deg, rgba(90, 0, 255, .7), rgba(50, 97, 45, .7)); 
 /*	background-color: rgba(108, 92, 214, .8); */
 	color: white;
+
 }
+	.footer h1, h2, h3 {
+		text-align: center;
+	}
 .to-top {
   /* display: none; Hidden by default */
   position: fixed; /* Fixed/sticky position */
@@ -602,11 +685,8 @@ transform: scale(.9);
         width: 100%;
         padding: 0;
     }
-	.collapsible {
-		font-size: 24px;
-	}
-	.not-collapsible {
-		font-size: 24px;
+	.header-bg {
+		font-size: 1.25rem;
 	}
 	.tech-grid {
 		grid-template-areas:
@@ -630,6 +710,12 @@ transform: scale(.9);
 		grid-template-areas:
 		'singer moonbender'
 		'services services';
+	}
+	.photography-grid {
+		grid-template-areas:
+			'photo summary'
+			'gallery gallery';
+		gap: 1rem;
 	}
 }
 /* <= 700px wide responsive flexbox/gallery */
@@ -658,15 +744,24 @@ transform: scale(.9);
 			'summary'
 			'highlights'
 			'skills';
-		gap: 1rem;
+		gap: .75rem;
 		margin-inline: 1rem;	
 	}
 	.music-grid {
 		gap: .75rem;
+		margin-inline: 1rem;
 		grid-template-areas:
 			'photo'
 			'summary'
 			'read-more';
+	}
+	.photography-grid {
+		gap: .75rem;
+		margin-inline: 1rem;
+		grid-template-areas:
+			'photo'
+			'summary'
+			'gallery';
 	}
 }
 /* <= 450px high Responsive layout - When screen is squashed short, make logo-text 95vw width and reduce padding*/
@@ -714,9 +809,12 @@ transform: scale(.9);
 		margin-right: auto;
 	}
 	.collapsible {
-		font-size: 18px;
+		font-size: 1.125rem;
 	}
 	.not-collapsible {
-		font-size: 18px;
+		font-size: 1.125rem;
+	}
+	.header-bg {
+		font-size: 1.125rem;
 	}
 }
